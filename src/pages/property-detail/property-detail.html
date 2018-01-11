@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <span ion-text color="primary">Property Showings</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="lightest-bg">
+        <ion-card *ngFor ="let property of propertyShowing; let i=index" >
+                <ion-card-content *ngIf="i==0">
+                    <ion-card-title ion-text color="dark" class="card-title">{{property.propertyName}}</ion-card-title>
+                    <p ion-text color="primary">{{property.address}}, {{property.city}} {{property.state}}</p>
+                </ion-card-content>
+            </ion-card>
+
+    <ion-card *ngFor ="let property of propertyShowing;">
+     <!-- <ion-card-content> -->
+        <ion-list>
+            <ion-item>
+                <ion-icon color="dark" item-left name="ios-contact-outline"></ion-icon>
+                <h3>Broker</h3>
+                <ion-note item-right>{{property.brokerName}}</ion-note>
+             </ion-item>
+             <!-- <hr margin-vertical> -->
+             <ion-item>
+                    <ion-icon color="dark" item-left name="ios-pricetag-outline" ></ion-icon>
+                    <h3>Price</h3>
+                    <ion-note item-right style="font-style:italic">{{property.askingPrice}}</ion-note>
+            </ion-item>
+            <!-- <hr margin-vertical> -->
+            <ion-item >
+                <ion-icon color="dark" item-left name="ios-calendar-outline"></ion-icon>
+                <h3>Visit date</h3>
+                <ion-note item-right style="color:rgb(102, 101, 101)!important">{{property.visitDate}}</ion-note>
+            </ion-item>
+        </ion-list>
+    <!-- </ion-card-content> -->
+    </ion-card>
+</ion-content>

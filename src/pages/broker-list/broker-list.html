@@ -1,0 +1,69 @@
+<!-- <ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" color="dark"></ion-icon>
+        </button>
+        <ion-title>
+            <span ion-text color="primary">Brokers</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="lightest-bg">
+
+    <ion-list>
+
+        <button ion-item *ngFor="let broker of brokers" (click)="openBrokerDetail(broker)">
+            <ion-avatar item-left>
+                <img src="{{broker.picture}}"/>
+            </ion-avatar>
+            <h2 ion-text color="dark" class="fw500">{{broker.name}}</h2>
+            <p ion-text color="primary">{{broker.title}}</p>
+        </button>
+
+    </ion-list>
+
+</ion-content> -->
+
+<ion-header>
+        <ion-navbar>
+            <button ion-button menuToggle>
+                <ion-icon name="menu" color="dark"></ion-icon>
+            </button>
+            <ion-title>
+                <span ion-text color="primary">Property Showings</span>
+            </ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <ion-content class="lightest-bg">
+    
+        <ion-card *ngFor ="let property of propertyShowing">
+                <ion-card-content>
+                        <ion-card-title ion-text color="dark" class="card-title">{{property.propertyName}}</ion-card-title>
+                        <p ion-text color="primary">{{property.address}}, {{property.city}} {{property.state}}</p>
+                </ion-card-content>
+         <!-- <ion-card-content> -->
+            <ion-list>
+                <ion-item>
+                    <ion-icon color="dark" item-left name="ios-contact-outline"></ion-icon>
+                    <h3>Broker</h3>
+                    <ion-note item-right>{{property.brokerName}}</ion-note>
+                 </ion-item>
+                 <!-- <hr margin-vertical> -->
+                 <ion-item>
+                        <ion-icon color="dark" item-left name="ios-pricetag-outline" ></ion-icon>
+                        <h3>Price</h3>
+                        <ion-note item-right style="font-style:italic">{{property.askingPrice}}</ion-note>
+                </ion-item>
+                <!-- <hr margin-vertical> -->
+                <ion-item >
+                    <ion-icon color="dark" item-left name="ios-calendar-outline"></ion-icon>
+                    <h3>Visit date</h3>
+                    <ion-note item-right style="color:rgb(102, 101, 101)!important">{{property.visitDate}}</ion-note>
+                </ion-item>
+            </ion-list>
+        <!-- </ion-card-content> -->
+        </ion-card>
+    </ion-content>
+    

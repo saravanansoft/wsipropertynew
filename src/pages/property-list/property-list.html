@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>
+      <span ion-text color="primary">Properties <span *ngIf="from === 'home'" class="fw300">(for {{proptype}})</span></span>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="openFilterModal()">
+        <ion-icon name="funnel" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="lightest-bg">
+    <div *ngIf="viewMode==='list'">
+        <ion-card *ngFor="let property of properties | termSearch:proptype:'propertyId'" margin-bottom>
+          <ion-card-content>
+            <ion-card-title ion-text color="dark" tappable (click)="openPropertyDetail(property.propertyId)" no-margin no-padding>
+              {{property.propertyName}}
+            </ion-card-title>
+            <div ion-text color="primary" style="float:left">
+              {{property.city}}, {{property.state}}
+            </div>
+            <div style="color:rgb(102, 101, 101)!important;margin-left:220px; font-style:italic">{{property.postedDate}}</div>
+          
+          </ion-card-content>
+        
+        </ion-card>
+    </div>
+</ion-content>
