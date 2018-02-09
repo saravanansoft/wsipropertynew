@@ -6,16 +6,16 @@ let properties: Array<any> = [
         city: "Bengaluru",
         state: "KA",
         price: "$500,000",
-        postedDate: "20 Nov 2017"
+        postedDate: "14 Dec 2017"
     },
     {
         propertyId: 2,
-        propertyName: "Ampa Skywalk",
+        propertyName: "Veeva Skywalk",
         address: "2/97, Nelson Manickam Road",
         city: "Chennai",
         state: "TN",
         price: "$350,000",
-        postedDate: "14 Dec 2017"
+        postedDate: "12 Nov 2017"
     },
     {
         propertyId: 3,

@@ -15,10 +15,12 @@ import {NotificationsPage} from '../notifications/notifications';
 export class HomePage {
 
   properties: Array<any>;
-  searchKey: string = "";
+	searchKey: string = "";
+	sortByValue:string;
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public service: PropertyService) {
-		this.findAll();
+		this.sortByValue="PostedDate";
+		this.findAll(this.sortByValue);
   }
 
   openPropertyListPage(proptype) {
@@ -43,11 +45,11 @@ export class HomePage {
 	}
 
 	onCancel(event) {
-	    this.findAll();
+	    this.findAll(this.sortByValue);
 	}
 
-	findAll() {
-	    this.service.findAll()
+	findAll(sortByValue:any) {
+	    this.service.findAll(sortByValue)
 	        .then(data => this.properties = data)
 	        .catch(error => alert(error));
 	}

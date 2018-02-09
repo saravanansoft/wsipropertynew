@@ -1,29 +1,4 @@
-<!-- <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu" color="dark"></ion-icon>
-        </button>
-        <ion-title>
-            <span ion-text color="primary">Brokers</span>
-        </ion-title>
-    </ion-navbar>
-</ion-header>
 
-<ion-content class="lightest-bg">
-
-    <ion-list>
-
-        <button ion-item *ngFor="let broker of brokers" (click)="openBrokerDetail(broker)">
-            <ion-avatar item-left>
-                <img src="{{broker.picture}}"/>
-            </ion-avatar>
-            <h2 ion-text color="dark" class="fw500">{{broker.name}}</h2>
-            <p ion-text color="primary">{{broker.title}}</p>
-        </button>
-
-    </ion-list>
-
-</ion-content> -->
 
 <ion-header>
         <ion-navbar>
@@ -33,6 +8,11 @@
             <ion-title>
                 <span ion-text color="primary">Property Showings</span>
             </ion-title>
+            <ion-buttons end>
+                <button ion-button (click)="openFilterModal()">
+                  <ion-icon name="funnel" color="primary"></ion-icon>
+                </button>
+              </ion-buttons>
         </ion-navbar>
     </ion-header>
     

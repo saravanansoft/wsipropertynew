@@ -13,7 +13,7 @@ import {BrokerListPage} from '../pages/broker-list/broker-list';
 import {AboutPage} from '../pages/about/about';
 import {SupportPage} from '../pages/support/support';
 // import {PreApprovedPage} from '../pages/pre-approved/pre-approved';
-import {MessageListPage} from '../pages/message-list/message-list';
+import {MessageListPage} from '../pages/message-list/message-list';   
 import {YourPropertyPage} from '../pages/your-property/your-property';
 
 export interface MenuItem {
